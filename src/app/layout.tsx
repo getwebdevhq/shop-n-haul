@@ -17,14 +17,14 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Shop N Haul — Curated Living & Everyday Luxury",
+  title: "Stash and Haul — Curated Living & Everyday Luxury",
   description: "Curated lifestyle products for modern living. Apple-precision layout, modern editorial design, and everyday accessibility. Explore fashion, beauty, home, and premium electronics.",
-  metadataBase: new URL("https://shopnhaul.vercel.app"),
+  metadataBase: new URL("https://stashandhaul.vercel.app"),
   openGraph: {
-    title: "Shop N Haul — Curated Living & Everyday Luxury",
+    title: "Stash and Haul — Curated Living & Everyday Luxury",
     description: "Experience modern luxury at everyday prices. Our curated selection of fashion, home decor, beauty, and tech delivers premium aesthetics without the retail markup.",
-    url: "https://shopnhaul.vercel.app",
-    siteName: "Shop N Haul",
+    url: "https://stashandhaul.vercel.app",
+    siteName: "Stash and Haul",
     locale: "en_US",
     type: "website",
   },
@@ -50,14 +50,14 @@ export default function RootLayout({
   const storeSchema = {
     "@context": "https://schema.org",
     "@type": "OnlineStore",
-    "name": "Shop N Haul",
+    "name": "Stash and Haul",
     "description": "Curated lifestyle products for modern living.",
-    "url": "https://shopnhaul.vercel.app",
-    "logo": "https://shopnhaul.vercel.app/images/logo.png",
+    "url": "https://stashandhaul.vercel.app",
+    "logo": "https://stashandhaul.vercel.app/images/logo.png",
     "priceRange": "$$",
     "sameAs": [
-      "https://instagram.com/shopnhaul",
-      "https://pinterest.com/shopnhaul"
+      "https://instagram.com/stashandhaul",
+      "https://pinterest.com/stashandhaul"
     ]
   };
 

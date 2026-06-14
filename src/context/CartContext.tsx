@@ -32,8 +32,8 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
 
   // Load cart and wishlist from localStorage on mount
   useEffect(() => {
-    const savedCart = localStorage.getItem("shopnhaul_cart");
-    const savedWishlist = localStorage.getItem("shopnhaul_wishlist");
+    const savedCart = localStorage.getItem("stashandhaul_cart");
+    const savedWishlist = localStorage.getItem("stashandhaul_wishlist");
     if (savedCart) {
       try {
         setCart(JSON.parse(savedCart));
@@ -52,12 +52,12 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
 
   // Save cart to localStorage
   useEffect(() => {
-    localStorage.setItem("shopnhaul_cart", JSON.stringify(cart));
+    localStorage.setItem("stashandhaul_cart", JSON.stringify(cart));
   }, [cart]);
 
   // Save wishlist to localStorage
   useEffect(() => {
-    localStorage.setItem("shopnhaul_wishlist", JSON.stringify(wishlist));
+    localStorage.setItem("stashandhaul_wishlist", JSON.stringify(wishlist));
   }, [wishlist]);
 
   const addToCart = (product: { id: string; name: string; price: number; image: string; category: string }) => {

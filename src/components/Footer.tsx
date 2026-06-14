@@ -33,7 +33,7 @@ export default function Footer() {
             href="/"
             className="font-display text-2xl md:text-3xl font-semibold tracking-[0.25em] text-ivory block"
           >
-            SHOP N HAUL
+            STASH & HAUL
           </Link>
           <p className="text-stone/60 text-sm max-w-sm leading-relaxed">
             Curating luxury lifestyle, fashion, beauty, and modern essentials for everyday living. High aesthetics, accessible pricing.
@@ -111,7 +111,7 @@ export default function Footer() {
 
       {/* Bottom Footer Section */}
       <div className="max-w-7xl mx-auto px-6 md:px-12 pt-8 border-t border-stone/10 flex flex-col md:flex-row items-center justify-between text-stone/40 text-[10px] tracking-[0.2em] uppercase space-y-4 md:space-y-0">
-        <div>&copy; {new Date().getFullYear()} Shop N Haul. All Rights Reserved.</div>
+        <div>&copy; {new Date().getFullYear()} Stash and Haul. All Rights Reserved.</div>
         <div className="flex space-x-8">
           <a href="#" className="hover:text-gold transition-colors">Privacy Policy</a>
           <a href="#" className="hover:text-gold transition-colors">Terms of Service</a>

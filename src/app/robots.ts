@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
       disallow: "/private/",
     },
-    sitemap: "https://shopnhaul.vercel.app/sitemap.xml",
+    sitemap: "https://stashandhaul.vercel.app/sitemap.xml",
   };
 }

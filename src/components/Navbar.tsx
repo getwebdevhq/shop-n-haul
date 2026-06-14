@@ -128,6 +128,11 @@ const MENU_STRUCTURE: MenuCategory[] = [
     },
   },
   {
+    name: "Hamper Builder",
+    href: "#hamper-builder",
+    subgroups: [],
+  },
+  {
     name: "Best Sellers",
     href: "#best-sellers",
     subgroups: [],
@@ -168,7 +173,7 @@ export default function Navbar() {
             onClick={() => setHoveredCategory(null)}
             className="font-display text-xl md:text-2xl font-semibold tracking-[0.2em] text-charcoal hover:opacity-85 transition-opacity"
           >
-            SHOP N HAUL
+            STASH & HAUL
           </Link>
 
           {/* Primary Navigation */}
@@ -356,7 +361,7 @@ export default function Navbar() {
           ))}
         </nav>
         <div className="py-12 text-center text-[10px] tracking-[0.2em] text-charcoal/40 uppercase">
-          Shop N Haul — Timeless Jewellery
+          Stash and Haul — Timeless Jewellery
         </div>
       </div>
     </>

@@ -11,6 +11,7 @@ import CartDrawer from "@/components/CartDrawer";
 import Footer from "@/components/Footer";
 import ProductCard from "@/components/ProductCard";
 import MagneticButton from "@/components/MagneticButton";
+import HamperBuilder from "@/components/HamperBuilder";
 
 // Premium Jewellery Seed Products (GBP)
 const SEED_PRODUCTS = [
@@ -117,7 +118,6 @@ const SEED_PRODUCTS = [
 export default function HomePage() {
   const heroRef = useRef<HTMLDivElement>(null);
   const [activeTrend, setActiveTrend] = useState<string>("Layered Necklaces");
-  const [activeStyle, setActiveStyle] = useState<string>("Minimalist");
 
   // Parallax scroll transforms for Hero Background and Hero Typography
   const { scrollYProgress } = useScroll({
@@ -154,7 +154,7 @@ export default function HomePage() {
         "@type": "ListItem",
         "position": 1,
         "name": "Home",
-        "item": "https://shopnhaul.vercel.app"
+        "item": "https://stashandhaul.vercel.app"
       }
     ]
   };
@@ -169,7 +169,7 @@ export default function HomePage() {
       "position": idx + 1,
       "item": {
         "@type": "Product",
-        "image": `https://shopnhaul.vercel.app${prod.image}`,
+        "image": `https://stashandhaul.vercel.app${prod.image}`,
         "name": prod.name,
         "offers": {
           "@type": "Offer",
@@ -437,66 +437,9 @@ export default function HomePage() {
       </section>
 
       {/* ======================================================== */}
-      {/* SECTION 6: SHOP BY STYLE                                 */}
+      {/* SECTION 6: MAKE YOUR OWN HAMPER                          */}
       {/* ======================================================== */}
-      <section className="py-32 px-6 md:px-12 max-w-7xl mx-auto">
-        <div className="text-center space-y-4 mb-20">
-          <span className="text-[10px] tracking-[0.3em] uppercase text-gold font-semibold">Curated Edits</span>
-          <h2 className="font-display text-5xl md:text-6xl font-medium tracking-wide">Shop By Style</h2>
-        </div>
-
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 mb-16">
-          {[
-            { name: "Minimalist", tag: "Daily Wear", image: "/images/earrings_close.png" },
-            { name: "Bold Statement", tag: "Signature Designs", image: "/images/rings_stack.png" },
-            { name: "Everyday Luxury", tag: "Premium Finish", image: "/images/hero_jewellery.png" },
-            { name: "Vintage Inspired", tag: "Intricate Cuts", image: "/images/rings_stack.png" },
-            { name: "Modern Classics", tag: "Timeless Links", image: "/images/bracelets_wrist.png" },
-          ].map((style) => (
-            <button
-              key={style.name}
-              onClick={() => setActiveStyle(style.name)}
-              className={`group relative overflow-hidden bg-stone/20 aspect-[3/4] cursor-pointer text-left w-full transition-all duration-300 ${
-                activeStyle === style.name ? "ring-2 ring-gold ring-offset-4 ring-offset-ivory" : ""
-              }`}
-            >
-              <Image
-                src={style.image}
-                alt={style.name}
-                fill
-                sizes="(max-width: 768px) 100vw, 20vw"
-                className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-charcoal/30 group-hover:bg-charcoal/40 transition-colors duration-500" />
-              <div className="absolute bottom-6 left-6 text-ivory">
-                <span className="text-[9px] uppercase tracking-[0.2em] text-gold font-bold">{style.tag}</span>
-                <h3 className="font-display text-2xl font-medium tracking-wide mt-1">{style.name}</h3>
-              </div>
-            </button>
-          ))}
-        </div>
-
-        {/* Selected style showcase list */}
-        <div className="bg-stone/10 p-8 md:p-12 border border-stone/20">
-          <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 mb-8 border-b border-stone/20 pb-6">
-            <div>
-              <h4 className="font-display text-3xl font-medium tracking-wide">The {activeStyle} Edit</h4>
-              <p className="text-xs text-charcoal/60 mt-1">Carefully selected pieces representing clean shapes and architectural styles.</p>
-            </div>
-            <Link
-              href="#new-arrivals"
-              className="text-xs uppercase tracking-[0.2em] font-semibold text-gold hover:text-charcoal transition-colors flex items-center gap-2"
-            >
-              View Full Collection <ArrowRight className="w-3.5 h-3.5" />
-            </Link>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {SEED_PRODUCTS.filter((p) => p.style === activeStyle).map((product) => (
-              <ProductCard key={product.id} product={product} />
-            ))}
-          </div>
-        </div>
-      </section>
+      <HamperBuilder products={SEED_PRODUCTS} />
 
       {/* ======================================================== */}
       {/* SECTION 7: NEW ARRIVALS                                  */}
@@ -621,7 +564,7 @@ export default function HomePage() {
       {/* ======================================================== */}
       <section className="py-36 bg-charcoal text-ivory text-center relative overflow-hidden">
         <div className="max-w-4xl mx-auto px-6 space-y-8 relative z-10">
-          <span className="text-[10px] tracking-[0.3em] uppercase text-gold font-bold">The Shop N Haul Guarantee</span>
+          <span className="text-[10px] tracking-[0.3em] uppercase text-gold font-bold">The Stash and Haul Guarantee</span>
           <h2 className="font-display text-5xl md:text-8xl font-medium tracking-wide leading-[0.9]">
             SIGNATURE
           </h2>
