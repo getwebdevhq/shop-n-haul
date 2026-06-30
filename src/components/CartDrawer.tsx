@@ -63,14 +63,14 @@ export default function CartDrawer() {
                   <p className="font-display text-xl text-charcoal/60 italic">Your bag is empty</p>
                   <button
                     onClick={() => setCartOpen(false)}
-                    className="text-xs uppercase tracking-[0.2em] text-gold hover:text-charcoal transition-colors font-semibold"
+                    className="text-xs uppercase tracking-[0.2em] text-gold hover:text-charcoal transition-colors font-semibold cursor-pointer"
                   >
                     Continue Exploring
                   </button>
                 </div>
               ) : (
                 cart.map((item) => (
-                  <div key={item.id} className="flex space-x-4 pb-6 border-b border-stone/20">
+                  <div key={item.id + (item.variantId || "")} className="flex space-x-4 pb-6 border-b border-stone/20">
                     <div className="relative w-20 h-20 bg-stone/20 overflow-hidden flex-shrink-0">
                       <Image
                         src={item.image}
@@ -86,11 +86,16 @@ export default function CartDrawer() {
                           <h3 className="font-display text-lg font-medium text-charcoal leading-tight">
                             {item.name}
                           </h3>
-                          <span className="text-sm font-semibold text-charcoal ml-2">
-                            £{(item.price * item.quantity).toFixed(2)}
+                          <span className="text-sm font-semibold text-charcoal ml-2 font-mono">
+                            ₹{(item.price * item.quantity).toLocaleString("en-IN")}
                           </span>
                         </div>
-                        <p className="text-[10px] tracking-wider uppercase text-charcoal/40 mt-1">
+                        {item.variantName && (
+                          <span className="text-[10px] text-gold block mt-0.5 text-left font-medium">
+                            Option: {item.variantName}
+                          </span>
+                        )}
+                        <p className="text-[10px] tracking-wider uppercase text-charcoal/40 mt-1 text-left">
                           {item.category}
                         </p>
                       </div>
@@ -99,7 +104,7 @@ export default function CartDrawer() {
                         {/* Quantity controls */}
                         <div className="flex items-center border border-stone/50 bg-ivory text-charcoal">
                           <button
-                            onClick={() => updateQuantity(item.id, item.quantity - 1)}
+                            onClick={() => updateQuantity(item.id, item.quantity - 1, item.variantId)}
                             className="p-1 hover:bg-stone/10 transition-colors cursor-pointer"
                             aria-label="Decrease quantity"
                           >
@@ -107,7 +112,7 @@ export default function CartDrawer() {
                           </button>
                           <span className="px-3 text-xs font-semibold">{item.quantity}</span>
                           <button
-                            onClick={() => updateQuantity(item.id, item.quantity + 1)}
+                            onClick={() => updateQuantity(item.id, item.quantity + 1, item.variantId)}
                             className="p-1 hover:bg-stone/10 transition-colors cursor-pointer"
                             aria-label="Increase quantity"
                           >
@@ -117,7 +122,7 @@ export default function CartDrawer() {
 
                         {/* Remove */}
                         <button
-                          onClick={() => removeFromCart(item.id)}
+                          onClick={() => removeFromCart(item.id, item.variantId)}
                           className="text-charcoal/40 hover:text-charcoal transition-colors cursor-pointer"
                           aria-label="Remove item"
                         >
@@ -138,7 +143,7 @@ export default function CartDrawer() {
                     Subtotal
                   </span>
                   <span className="font-display text-2xl font-semibold">
-                    £{subtotal.toFixed(2)}
+                    ₹{subtotal.toLocaleString("en-IN")}
                   </span>
                 </div>
                 <p className="text-[10px] text-charcoal/40 leading-relaxed">

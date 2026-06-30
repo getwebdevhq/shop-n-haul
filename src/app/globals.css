@@ -10,6 +10,7 @@
   --color-charcoal: #1A1A1A;
   --color-gold: #C8B38B;
   --color-sage: #A8B39B;
+  --border-radius: 0px; /* Default */
   
   /* System mappings */
   --color-background: var(--background);
@@ -119,6 +120,10 @@ body {
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid rgba(247, 245, 242, 0.05);
+}
+
+.rounded-theme {
+  border-radius: var(--border-radius) !important;
 }
 
 /* Editorial Typography */

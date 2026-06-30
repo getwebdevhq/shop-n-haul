@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Cormorant_Garamond, Inter } from "next/font/google";
 import "./globals.css";
 import { CartProvider } from "@/context/CartContext";
+import { IntegrationService } from "@/services/integration.service";
 
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
@@ -41,11 +42,19 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const appearance = await IntegrationService.getSettings("appearance");
+  
+  const customStyles = {
+    "--color-charcoal": appearance.primary_color || "#1A1A1A",
+    "--color-gold": appearance.accent_color || "#C8B38B",
+    "--border-radius": appearance.border_radius || "0px",
+  } as React.CSSProperties;
+
   // Structured Data JSON-LD for the organization/ecommerce store
   const storeSchema = {
     "@context": "https://schema.org",
@@ -62,7 +71,7 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="en" className={`${cormorant.variable} ${inter.variable} h-full antialiased`}>
+    <html lang="en" className={`${cormorant.variable} ${inter.variable} h-full antialiased`} style={customStyles}>
       <head>
         <script
           type="application/ld+json"

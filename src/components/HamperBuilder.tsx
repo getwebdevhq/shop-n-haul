@@ -213,7 +213,7 @@ export default function HamperBuilder({ products }: HamperBuilderProps) {
                         <p className="text-xs text-charcoal/50 leading-relaxed max-w-sm">{box.description}</p>
                       </div>
                       <span className="font-display text-lg font-semibold text-charcoal flex-shrink-0">
-                        £{box.price.toFixed(2)}
+                        ₹{box.price.toLocaleString("en-IN")}
                       </span>
                     </button>
                   ))}
@@ -299,7 +299,7 @@ export default function HamperBuilder({ products }: HamperBuilderProps) {
                         </div>
 
                         <div className="flex items-center justify-between pt-2 border-t border-stone/10">
-                          <span className="font-semibold text-sm">£{product.price.toFixed(2)}</span>
+                          <span className="font-semibold text-sm">₹{Number(product.price).toLocaleString("en-IN")}</span>
                           
                           {qty > 0 ? (
                             <div className="flex items-center border border-stone/50 bg-ivory text-charcoal">
@@ -352,7 +352,7 @@ export default function HamperBuilder({ products }: HamperBuilderProps) {
                             <div className="truncate pr-2">
                               <p className="font-semibold truncate text-charcoal">{item.product.name}</p>
                               <p className="text-[9px] text-charcoal/40">
-                                £{item.product.price.toFixed(2)} x {item.quantity}
+                                ₹{Number(item.product.price).toLocaleString("en-IN")} x {item.quantity}
                               </p>
                             </div>
                             <button
@@ -371,15 +371,15 @@ export default function HamperBuilder({ products }: HamperBuilderProps) {
                     <div className="space-y-1 text-xs">
                       <div className="flex justify-between text-charcoal/60">
                         <span>{selectedBox.name}:</span>
-                        <span>£{selectedBox.price.toFixed(2)}</span>
+                        <span>₹{selectedBox.price.toLocaleString("en-IN")}</span>
                       </div>
                       <div className="flex justify-between text-charcoal/60">
                         <span>Items Subtotal:</span>
-                        <span>£{itemsSubtotal.toFixed(2)}</span>
+                        <span>₹{itemsSubtotal.toLocaleString("en-IN")}</span>
                       </div>
                       <div className="flex justify-between text-sm font-bold pt-2 border-t border-stone/10">
                         <span>Total:</span>
-                        <span>£{totalHamperPrice.toFixed(2)}</span>
+                        <span>₹{totalHamperPrice.toLocaleString("en-IN")}</span>
                       </div>
                     </div>
 
@@ -546,7 +546,7 @@ export default function HamperBuilder({ products }: HamperBuilderProps) {
                       {hamperItems.map((item) => (
                         <div key={item.product.id} className="flex justify-between items-center text-xs">
                           <span className="text-charcoal/80 font-medium">{item.product.name} (x{item.quantity})</span>
-                          <span className="font-semibold text-charcoal">£{(item.product.price * item.quantity).toFixed(2)}</span>
+                          <span className="font-semibold text-charcoal">₹{(item.product.price * item.quantity).toLocaleString("en-IN")}</span>
                         </div>
                       ))}
                     </div>
@@ -578,11 +578,11 @@ export default function HamperBuilder({ products }: HamperBuilderProps) {
                     <div className="space-y-2 text-xs">
                       <div className="flex justify-between items-center">
                         <span className="text-charcoal/60">{selectedBox.name} Packaging:</span>
-                        <span className="font-semibold">£{selectedBox.price.toFixed(2)}</span>
+                        <span className="font-semibold">₹{selectedBox.price.toLocaleString("en-IN")}</span>
                       </div>
                       <div className="flex justify-between items-center">
                         <span className="text-charcoal/60">Jewellery Items ({totalItemsCount} pcs):</span>
-                        <span className="font-semibold">£{itemsSubtotal.toFixed(2)}</span>
+                        <span className="font-semibold">₹{itemsSubtotal.toLocaleString("en-IN")}</span>
                       </div>
                       <div className="flex justify-between items-center">
                         <span className="text-charcoal/60">Signature Note Card:</span>
@@ -593,7 +593,7 @@ export default function HamperBuilder({ products }: HamperBuilderProps) {
                     <div className="border-t border-stone/20 pt-4 flex justify-between items-end">
                       <div>
                         <span className="text-[9px] uppercase tracking-widest text-charcoal/40 font-bold block">Total Price</span>
-                        <span className="font-display text-3xl font-bold text-charcoal">£{totalHamperPrice.toFixed(2)}</span>
+                        <span className="font-display text-3xl font-bold text-charcoal">₹{totalHamperPrice.toLocaleString("en-IN")}</span>
                       </div>
                       <span className="text-[9px] text-sage font-bold tracking-widest uppercase mb-1">Includes VAT</span>
                     </div>

@@ -21,12 +21,12 @@ interface MenuCategory {
 const MENU_STRUCTURE: MenuCategory[] = [
   {
     name: "New In",
-    href: "#new-arrivals",
+    href: "/#new-arrivals",
     subgroups: [],
   },
   {
     name: "Necklaces",
-    href: "#categories",
+    href: "/collections/necklaces",
     subgroups: [
       "Pendant Necklaces",
       "Chain Necklaces",
@@ -39,12 +39,12 @@ const MENU_STRUCTURE: MenuCategory[] = [
       title: "The Layering Edit",
       description: "Pieces designed to stack, mix, and match.",
       cta: "Explore Necklaces",
-      href: "#necklaces",
+      href: "/collections/necklaces",
     },
   },
   {
     name: "Earrings",
-    href: "#categories",
+    href: "/collections/earrings",
     subgroups: [
       "Stud Earrings",
       "Hoop Earrings",
@@ -57,12 +57,12 @@ const MENU_STRUCTURE: MenuCategory[] = [
       title: "Signature Hoops",
       description: "Classic gold hoops for everyday styling.",
       cta: "Shop Hoops",
-      href: "#earrings",
+      href: "/collections/earrings",
     },
   },
   {
     name: "Rings",
-    href: "#categories",
+    href: "/collections/rings",
     subgroups: [
       "Stackable Rings",
       "Statement Rings",
@@ -74,12 +74,12 @@ const MENU_STRUCTURE: MenuCategory[] = [
       title: "Modern Stacking",
       description: "Finely crafted rings in recycled gold.",
       cta: "Explore Rings",
-      href: "#rings",
+      href: "/collections/rings",
     },
   },
   {
     name: "Bracelets",
-    href: "#categories",
+    href: "/collections/bracelets",
     subgroups: [
       "Chain Bracelets",
       "Tennis Bracelets",
@@ -91,12 +91,12 @@ const MENU_STRUCTURE: MenuCategory[] = [
       title: "Tennis Classics",
       description: "Timeless luxury for quiet moments.",
       cta: "Shop Bracelets",
-      href: "#bracelets",
+      href: "/collections/bracelets",
     },
   },
   {
     name: "Collections",
-    href: "#collections",
+    href: "/#collections",
     subgroups: [
       "Everyday Essentials",
       "Minimal Collection",
@@ -109,32 +109,32 @@ const MENU_STRUCTURE: MenuCategory[] = [
       title: "The Golden Hour",
       description: "Warm 18ct vermeil gold collection.",
       cta: "Shop Golden Hour",
-      href: "#collections",
+      href: "/collections/golden-hour",
     },
   },
   {
     name: "Gifts",
-    href: "#gifts",
+    href: "/#gifts",
     subgroups: [
-      "Gifts Under £50",
-      "Gifts Under £100",
+      "Gifts Under ₹5,000",
+      "Gifts Under ₹10,000",
       "Gifts For Her",
     ],
     promo: {
       title: "Curated Gifting",
       description: "Make it personal. Complimentary signature boxing.",
       cta: "Gift Guide",
-      href: "#gifts",
+      href: "/#gifts",
     },
   },
   {
     name: "Hamper Builder",
-    href: "#hamper-builder",
+    href: "/#hamper-builder",
     subgroups: [],
   },
   {
     name: "Best Sellers",
-    href: "#best-sellers",
+    href: "/#best-sellers",
     subgroups: [],
   },
 ];
