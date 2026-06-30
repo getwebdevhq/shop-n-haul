@@ -160,10 +160,10 @@ export default function Navbar() {
     <>
       <header
         onMouseLeave={() => setHoveredCategory(null)}
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-out ${
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-out bg-white ${
           isScrolled || hoveredCategory
-            ? "py-4 glassmorphism shadow-glass border-b border-charcoal/5"
-            : "py-6 bg-transparent border-b border-transparent"
+            ? "py-4 shadow-sm border-b border-stone-200"
+            : "py-6 border-b border-stone-100"
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
@@ -171,7 +171,7 @@ export default function Navbar() {
           <Link
             href="/"
             onClick={() => setHoveredCategory(null)}
-            className="font-display text-xl md:text-2xl font-semibold tracking-[0.2em] text-charcoal hover:opacity-85 transition-opacity"
+            className="font-display text-xl md:text-2xl font-semibold tracking-[0.2em] text-charcoal hover:opacity-85 transition-opacity whitespace-nowrap"
           >
             STASH & HAUL
           </Link>
